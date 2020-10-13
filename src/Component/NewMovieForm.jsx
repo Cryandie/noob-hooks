@@ -13,6 +13,7 @@ const NewMovieForm = ({addMovie}) => {
     
     
     } 
+    
  
     return (
        

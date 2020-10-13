@@ -43,8 +43,8 @@ export const MovieCard = ({nameSearch}) => {
       <div>  
         <h1 className="moviesHeader">Movies:</h1>
         <div className="cardsContainer">
-        {/* {movie.filter((mv)=> mv.title.toLowerCase().includes(nameSearch.toLowerCase)) !!Problème d'affichage ici */}
-        {movie.map(( mov , i) => (
+        {movie.filter((mv)=> mv.title.toLowerCase().includes(nameSearch.toLowerCase())) 
+      .map(( mov , i) => (
             <Card style={{ width: '25rem' , marginBottom :'2rem' }} key={i}>
                 
   <Card.Img className="cardImage"style={{height :'29rem'}} variant="top" src={mov.posterUrl} />
