@@ -1,38 +1,47 @@
+html {
+  background-color: rgba(58, 62, 65, 0.952);
+}
 .App {
-  text-align: center;
+  background-color: rgba(80, 84, 87, 0.65);
+}
+.moviesHeader {
+  margin-left: 25px;
+  font-weight: bolder;
+  font-variant-caps: all-small-caps;
+  font-size: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardsContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem !important;
+}
+
+.rate {
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(8, 158, 158);
+}
+.addContainer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+label {
+  margin-left: 15px;
+  display: flex;
+  margin-top: 5px;
+  margin-right: 15px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.firstSub {
+  margin-left: 25px;
 }
