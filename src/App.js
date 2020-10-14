@@ -5,11 +5,11 @@ import { Navigation } from "./Component/NavBaar";
 
 function App() {
   const [nameSearch, setNameSearch] = useState("");
-
+  const [rateSearch, setRateSearch] = useState("");
   return (
     <div className="App">
-      <Navigation setNameSearch={setNameSearch} />
-      <MovieCard nameSearch={nameSearch} />
+      <Navigation setNameSearch={setNameSearch} setRateSearch={setRateSearch} />
+      <MovieCard nameSearch={nameSearch} rateSearch={rateSearch} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import {Navbar, Button , Form , Nav , FormControl} from "react-bootstrap";
 
 
 
-export const Navigation = ({setNameSearch} ) => {
+export const Navigation = ({setNameSearch,setRateSearch} ) => {
 
 
 
@@ -17,7 +17,8 @@ export const Navigation = ({setNameSearch} ) => {
       <Nav.Link href="#pricing">Pricing</Nav.Link>
     </Nav>
     <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={e =>setNameSearch(e.target.value)} />
+      <FormControl type="string"  placeholder="Search by title" className="mr-sm-2" onChange={e =>setNameSearch(e.target.value)} />
+      <FormControl type="number"  placeholder="Search by rate" className="mr-sm-2" onChange={e =>setRateSearch(e.target.value)} />
       <Button variant="outline-info">Search</Button>
     </Form>
   </Navbar>

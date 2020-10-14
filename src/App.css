@@ -32,10 +32,13 @@ html {
   justify-content: flex-end;
   color: rgb(8, 158, 158);
 }
-.addContainer {
+
+.modalstyle {
   display: flex;
-  justify-content: center;
+  text-align: left;
+  background-color: rgba(134, 132, 131, 0.329);
 }
+
 label {
   margin-left: 15px;
   display: flex;
@@ -44,4 +47,26 @@ label {
 }
 .firstSub {
   margin-left: 25px;
+}
+.addMovieBtn {
+  background-color: tomato !important;
+}
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+.modal-footer {
+  margin-right: 8.5rem;
+}
+.modal-header {
+  display: flex;
+  background-color: rgba(134, 132, 131, 0.466);
+}
+.modal-title {
+  display: flex;
+  text-align: center;
+  margin-left: 8.5rem;
+}
+.addingMovie {
+  background-color: tomato !important;
 }

@@ -1,8 +1,16 @@
 import React, {useState} from 'react';
 import setImage from '../Assets/setImage.jpg';
+import {Button ,Modal} from 'react-bootstrap';
 
 
 const NewMovieForm = ({addMovie}) => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+
+
     const [title, setTitle]=useState('');
     const [description, setDescription]=useState('');
     const [rate, setRate]=useState('');
@@ -10,30 +18,52 @@ const NewMovieForm = ({addMovie}) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         addMovie(title ,description ,rate ,setImage );
-    
+        handleClose();
     
     } 
     
  
     return (
-       
-        <form className="addContainer" onSubmit={handleSubmit}>
-            <label>
+        <div className='btnContainer'>
+        <Button className="addMovieBtn" variant="primary" onClick={handleShow}>
+          Add a new movie
+        </Button>
+  
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>New Movie details</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modalstyle">
+        <form className="addContainer" >
+            <label >
             Movie name :
             </label>
-        <input type ="text" value={title} required onChange={(e) =>setTitle(e.target.value)}/>
+           
+        <input type ="text" required onChange={(e) =>setTitle(e.target.value)}/>
+        <br/>
         <label>
            Description :
             </label>
-        <input type ="text" value={description} required onChange={(e) =>setDescription(e.target.value)}/>
+        <input type ="text" style={{marginLeft:"7px"}} required  onChange={(e) =>setDescription(e.target.value)}/>
+        <br/>
         <label>
            Rate :
             </label>
-        <input type ="number" value={rate} required onChange={(e) =>setRate(e.target.value)}/>
-        <input className="firstSub" type ="submit" value="add your  favorite movie"/>
+        <input type ="number" style={{marginLeft:"56px"}} required onChange={(e) =>setRate(e.target.value)}/>
+       
        
         </form>
-       
+        </Modal.Body>
+        <Modal.Footer >
+          <Button variant="secondary" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button className="addingMovie" variant="primary" onClick={handleSubmit}>
+            Add Movie
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
     )
 
 }

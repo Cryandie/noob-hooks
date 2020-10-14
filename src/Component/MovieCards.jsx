@@ -3,7 +3,7 @@ import {Card} from 'react-bootstrap';
 import NewMovieForm from './NewMovieForm';
 
 
-export const MovieCard = ({nameSearch}) => {
+export const MovieCard = ({nameSearch,rateSearch}) => {
   const [movie, setMovie] = useState([
     {
       title: "Harry Potter",
@@ -36,14 +36,14 @@ export const MovieCard = ({nameSearch}) => {
 
     const addMovie = (title,description,rate,posterUrl) => {
       setMovie ([...movie, {title, description ,rate ,posterUrl }]);
-    }
+    } 
   
   
     return (
       <div>  
         <h1 className="moviesHeader">Movies:</h1>
         <div className="cardsContainer">
-        {movie.filter((mv)=> mv.title.toLowerCase().includes(nameSearch.toLowerCase())||mv.rate.includes(nameSearch)) 
+        {movie.filter((mv)=> mv.title.toLowerCase().includes(nameSearch.toLowerCase())&&mv.rate.includes(rateSearch)) 
       .map(( mov , i) => (
             <Card style={{ width: '25rem' , marginBottom :'2rem' }} key={i}>
                 
