@@ -43,7 +43,7 @@ export const MovieCard = ({nameSearch}) => {
       <div>  
         <h1 className="moviesHeader">Movies:</h1>
         <div className="cardsContainer">
-        {movie.filter((mv)=> mv.title.toLowerCase().includes(nameSearch.toLowerCase())) 
+        {movie.filter((mv)=> mv.title.toLowerCase().includes(nameSearch.toLowerCase())||mv.rate.includes(nameSearch)) 
       .map(( mov , i) => (
             <Card style={{ width: '25rem' , marginBottom :'2rem' }} key={i}>
                 
